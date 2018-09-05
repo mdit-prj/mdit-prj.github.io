@@ -18,32 +18,6 @@ $(function() {
 
 });
 
-
-
-// dom structure
-/*
-<div data-mk-slide class="slide-area-01">
-<ul data-mk-slide-indicator class="tab">
-<li><a href="#" class="on">선형</a></li>
-<li><a href="#">모드</a></li>
-<li><a href="#">열전달</a></li>
-</ul>
-<ul data-mk-slide-pages class="slide-image">
-<li><img src="./assets/images/temp-video-03.jpg" alt=""></li>
-<li style="display: none;"><img src="./assets/images/temp-video-04.jpg" alt=""></li>
-<li style="display: none;"><img src="./assets/images/temp-video-05.jpg" alt=""></li>
-</ul>
-</div>
-*/
-
-// slide plugin
-/**
-* usage
-* new Slide({
-*	autoplay: [true, 4000],
-*	targetName: 'mk'
-* })
-*/
 'use strict';
 
 class Slide {

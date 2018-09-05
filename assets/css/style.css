@@ -494,9 +494,19 @@ section.feature-06 .list .left p {color:#666; width:75%;}
 	nav .menu-info a {height: 5rem; line-height: 5rem; color:#999;}	
 	nav>ul {display: block;}
 	nav>ul>li {float:none; width:50%; margin:0; border-right:1px solid #ddd;}
-	nav>ul>li>a {font-size:1.5rem; width:100%; border-bottom:1px solid #ddd; padding-left:1rem; position: relative;}
-	nav>ul>li ul {display:block; position: absolute; width:50%; height:100%; right:0; top:5rem; bottom:0; margin-top:1px; background:#f2f2f2;}
 	nav>ul>li ul:after {display:none;}
+	nav>ul>li>a {font-size:1.5rem; width:100%; border-bottom:1px solid #ddd; padding-left:1rem; position: relative;}
+	nav>ul>li ul {
+		display:none;	/* block 에서 none으로 변경 */
+		position: absolute; width:50%; height:100%; right:0; top:5rem; bottom:0; margin-top:1px; background:#f2f2f2;
+	}
+
+	/* 서브메뉴 관련 추가 */
+	nav>ul>li[data-has-sub].on {}
+	nav>ul>li[data-has-sub].on > a {color: #2d61d5;}
+	nav>ul>li[data-has-sub].on > ul {display: block;}
+
+	
 	
 	nav>ul>li ul li {text-align: left;}
 	nav>ul>li ul li a {width:100%; line-height: 4rem; font-size:1.25rem; height:4rem; border-bottom:1px solid #ddd; padding-left:1rem;}
@@ -684,7 +694,7 @@ section.feature-06 .list .left p {color:#666; width:75%;}
 
 
 
-
+/* 미디어 쿼리는 입맛에 맞게 원하는 위치에 넣은 됨, 아래는 PC기준 */
 [data-mk-slide] {}
 [data-mk-slide] [data-mk-slide-pages] {
 	width: 100%;
@@ -693,14 +703,30 @@ section.feature-06 .list .left p {color:#666; width:75%;}
 }
 [data-mk-slide] [data-mk-slide-pages] > li.on {
 	opacity: 1;
-	transition: 250ms ease-in-out 300ms;
+	transition: opacity 1000ms ease-in-out;
 }
 [data-mk-slide] [data-mk-slide-pages] > li {
 	width: 100%;
 	height: 509px;
 	opacity: 0;
-	transition: 250ms ease-in-out 300ms;
+	transition: all 1000ms ease-in-out;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
+
+/* touch slide */
+.animate { transition: transform 0.3s ease-out; }
+.slider { width: 100%; height: 100%; overflow: hidden; }
+.slider .holder { width: 300%; max-height: 500px; height: 100%; overflow-y: hidden;}
+.slider .holder .slider-wrap { width: 100%; height: 500px; position: absolute; left: 50%; margin-left: -150px; top: 50%; margin-top: -225px;}
+.slider .holder .slide-wrapper { width: 33.333%; height: 100%; float: left; height: 500px; position: relative; overflow: hidden;}
+.slider .holder .slide-wrapper .slide { width: 100%; height: 100%; position: relative;}
+.slider .holder .slide-wrapper .slide img { position: absolute; z-index: 0; top: 0; left: 0; width: 100%;}
+.slider .holder .slide-wrapper .slide div { width: 300px; height: 500px; z-index: 0;}
+
+/* mask */
+.mask {position: relative;}
+.mask .before-change {}
+.mask .after-change {position: absolute; top: 0; left: 0;}
+.mask .after-change img {position: absolute; bottom: 0; left: 0;}

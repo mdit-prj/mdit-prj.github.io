@@ -727,6 +727,29 @@ section.feature-06 .list .left p {color:#666; width:75%;}
 
 /* mask */
 .mask {position: relative;}
-.mask .before-change {}
-.mask .after-change {position: absolute; top: 0; left: 0;}
-.mask .after-change img {position: absolute; bottom: 0; left: 0;}
+section.main-visual .mask .before-change .img-wrapper,
+section.main-visual .mask .after-change .img-wrapper {width: 100%; max-width: 1410px; margin: 0 auto;}
+section.main-visual .mask .before-change .img-wrapper {background-image: url(../images/main-visual-before.png);}
+section.main-visual .mask .after-change .img-wrapper {background-image: url(../images/main-visual-after.png); opacity: 0;}
+section.main-visual .mask .before-change .img-wrapper,
+section.main-visual .mask .after-change .img-wrapper {
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-attachment: inherit;
+	/* background-size: cover; */
+	width: 100%;
+}
+@media screen and (max-width:1023px) {
+	section.main-visual .mask .before-change .img-wrapper,
+	section.main-visual .mask .after-change .img-wrapper {
+		background-size: contain;
+	}
+}
+section.main-visual .mask .before-change .img-wrapper.on,
+section.main-visual .mask .after-change .img-wrapper.on {
+	background-attachment: fixed;
+	opacity: 1;
+}
+section.main-visual .mask .after-change {position: relative;}
+section.main-visual .mask .after-change .head {width: 100%; position: absolute; left: 50%; transform: translateX(-50%);}
+section.main-visual .mask .after-change .after-text { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);}

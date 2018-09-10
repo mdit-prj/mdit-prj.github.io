@@ -75,11 +75,13 @@ var afterLoad = function() {
 		var hasSubLists = selectors('[data-has-sub]');
 		function mobileMenuToggle(targetIdx) {
 			hasSubLists[targetIdx].classList.add('on');
-			hasSubLists.forEach(function(subList, idx) {
-				if (idx !== targetIdx ) {
-					subList.classList.remove('on');
-				}
-			});
+			for( var i=0; i<hasSubLists; i+=1) {
+				(function(idx) {
+					if (idx !== targetIdx ) {
+						hasSubLists[i].classList.remove('on');
+					}
+				})(i);
+			}
 		}
 
 		for( var i=0; i < hasSubLists.length; i+=1 ) {

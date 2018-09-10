@@ -22,17 +22,18 @@
     <meta property="og:image" content="" />
     <meta property="og:description" content="" />
 
-    <link rel="icon" href="./assets/images/favicon-icon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./assets/images/favicon-icon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/faviconn.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
 
 	<!-- include -->
 	<link rel="stylesheet" href="./assets/css/default.css" />
-	<!-- <link rel="stylesheet" href="./assets/css/layout.css" /> -->
+	<link rel="stylesheet" href="./assets/css/layout.css" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
-	<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+	<link rel="stylesheet" href="htttp:/cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
 
 	<script src="./assets/js/jquery.js"></script>
 	<script src="./assets/js/style.js"></script>
+	<script src="/_js/functions.js"></script>
 	<!-- // include -->
 
 	<!-- Google Analytics -->
@@ -57,7 +58,7 @@
 					</a>
 				</div>
 				<ul>
-					<li data-has-sub class="on">
+					<li data-has-sub>
 						<a href="/product/grade.asp">시작하기</a>
 						<ul class="sub">
 							<li><a href="/product/grade.asp">제품등급</a></li>
@@ -72,7 +73,7 @@
 							<li><a href="/check/feature.asp">제품특징</a></li>
 							<li><a href="/check/application-main.asp">적용사례</a></li>
 							<li><a href="/check/application-list.asp">기업활용 사례</a></li>
-							<li><a href="/check/midasit.asp">회사소개</a></li>
+							<!-- <li><a href="/check/midasit.asp">회사소개</a></li> -->
 						</ul>
 					</li>
 					<li data-has-sub>
@@ -86,7 +87,7 @@
 					<li data-has-sub>
 						<a href="/support/faq-list.asp">기술지원</a>
 						<ul class="sub">
-							<li><a href="/support/faq-list.asp">FQA</a></li>
+							<li><a href="/support/faq-list.asp">FAQ</a></li>
 							<li><a href="/support/qna-list.asp">QNA</a></li>
 							<li><a href="/support/request.asp">제품상담</a></li>
 						</ul>
@@ -95,14 +96,16 @@
 						<a href="/issue/issue-list.asp">이슈 및 소식</a>
 					</li>
 					<li>
-						<a href="/member/download-check.asp" class="download">다운로드</a>
+						<a href="/member/download.asp" class="download"><span>다운로드<i class="xi-download"></i></span></a>
 					</li>
 				</ul>
 				
 				<div class="sub-menu">
 					<ul>
-						<li><a href="/member/login.asp">로그인</a></li>
-						<li><a href="/member/join.asp">회원가입</a></li>
+					
+					<li><a href="/member/logout.asp">로그아웃</a></li>
+					<li><a href="/member/mypage.asp">마이페이지</a></li>
+					
 					</ul>
 				</div>
 			</nav>
@@ -114,30 +117,143 @@
 	</div>
 </header>
 
+<script src="http://idangero.us/swiper/dist/js/swiper.min.js"></script>
+<link rel="stylesheet" href="./assets/css/swiper.min.css" />
+
 <main class="main">
 	
-	<section class="main-visual">
+	<section class="main-intro m-layout m-layout2">
 		<p class="product-name">midas MeshFree</p>
-		<h1>작은 변화, 위대한 혁신</h1>
+		<h1><span class="motion1">작은 변화,</span> <span class="motion2">위대한 혁신</span></h1>
+		<div class="video-area">
+			<video autoplay muted preload playsinline>		
+			    <!-- <source src="./assets/video/main-intro.webm" type="video/webm"> -->
+			    <source src="http://www2.meshfree.co.kr/assets/video/main-intro2.mp4" type="video/mp4">
+			</video>
+		</div>
+		<p class="main">
+			midas MeshFree는 그동안 해석SW 사용자들의 시간과 노력을 낭비하게 만들었던 모델 클린업 과정과 Mesh 생성 작업을 없앤 혁신적인 솔루션입니다. 이제 CAD 모델을 원본 그대로 불러오고 자동으로 정렬격자를 생성하여 곧바로 해석결과를 얻을 수 있습니다.
+		</p>
+		<div class="btn-main">
+			<a href="#">지금 다운로드 하기 <i class="xi-download"></i></a>
+		</div>
+	</section>
+	
+	<!-- 
+	<section class="main-imagine m-layout">
+		<h2>상상할 수 있는<br />모든 제품을 현실화하다</h2>
+		<p class="sub-text">당신이 MeshFree를 사용하게 된다는 것은 정렬 격자라는 마법상자를 통해<br />상상 속의 디자인을 구체화하여 검증하고 최적의 설계안을 도출해낼 수 있다는 의미입니다.</p>
+		<video autoplay loop muted preload playsinline>		
+		    <source src="./assets/video/meshfree.webm" type="video/webm">		
+		    <source src="./assets/video/meshfree.mp4" type="video/mp4">
+		</video>
+	</section>
+	-->
+	
+	<section class="main-mesh-free">
+		<div class="top-area">
+			<h2>해석전문가들도 깜짝 놀란<br />Mesh로부터의 자유로움</h2>
+		</div>
+		
+		<div class="m-layout m-layout2">			
+			<div class="video-list">
+				<div class="video-area">
+					
+					<!-- Swiper -->
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide sli1">
+								<img src="./assets/images/main-slide-01-01.jpg" alt="" />
+							</div>
+							<div class="swiper-slide sli2">
+								<img src="./assets/images/main-slide-01-02.jpg" alt="" />
+							</div>
+							<div class="swiper-slide sli3">
+								<img src="./assets/images/main-slide-01-03.jpg" alt="" />
+							</div>
+							<div class="swiper-slide sli4">
+								<img src="./assets/images/main-slide-01-04.jpg" alt="" />
+							</div>
+							<div class="swiper-slide sli5">
+								<img src="./assets/images/main-slide-01-05.jpg" alt="" />
+							</div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+						<!-- Add Arrows -->
+					</div>
+					
+				</div>
+				<div class="text-area">
+					<h3>처음 느껴보는 자유</h3>
+					<p class="main-text">
+						MeshFree의 정렬격자 기반의 최신 해석 기술은 모델 간략화 및 이상화 없이 3D CAD 원형 그대로 해석합니다. 지금까지 한 번도 느껴보지 못한 Mesh로부터의 자유를 누구나, 마음껏 경험할 수 있습니다.</p>
+				</div>
+			</div>
+			
+			<div class="video-list">
+				<div class="video-area">
+					<img src="./assets/images/main-slide-02-01.jpg" alt="" />
+				</div>
+				<div class="text-area">
+					<h3>똑똑하고 믿음직한 기술</h3>
+					<p class="main-text">
+						최신 해석 기술, 똑똑한 자동화 기술, 병렬 연산 기법이 기존 FEM 대비 빠른 작업 속도를 자랑합니다. 더불어 철저한 검증을 통해 높은 신뢰성까지 확보하였습니다. 지금 바로 쾌적하고 똑똑한 믿을 수 있는 친구를 만나보세요.
+					</p>
+				</div>
+			</div>
+			
+			<div class="video-list">
+				<div class="video-area">
+					
+					<!-- Swiper -->
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide sli1">
+								<img src="./assets/images/main-slide-03-01.jpg" alt="" />
+							</div>
+							<div class="swiper-slide sli2">
+								<img src="./assets/images/main-slide-03-02.jpg" alt="" />
+							</div>
+							<div class="swiper-slide sli3">
+								<img src="./assets/images/main-slide-03-03.jpg" alt="" />
+							</div>
+							<div class="swiper-slide sli4">
+								<img src="./assets/images/main-slide-03-04.jpg" alt="" />
+							</div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+						<!-- Add Arrows -->
+					</div>
+					
+				</div>
+				<div class="text-area">
+					<h3>거침없는 능력</h3>
+					<p class="main-text">
+						강성, 강도, 진동, 열, 내구수명 그리고 최적화 기술까지 MeshFree 기술에는 거침이 없습니다. 당신이 필요한 모든 기능을 직접 눈으로 확인해보세요.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="main-visual">
 		<div class="mask">
 			<div class="before-change" data-img="./assets/images/main-visual-before.png">
 				<div class="img-wrapper"></div>
-				<!-- <img src="./assets/images/main-visual-before.png" alt="" /> -->
+				<!-- <img src="../assets/images/main-visual-before.png" alt="" /> -->
 			</div>
 			<div class="after-change" data-img="./assets/images/main-visual-after.png">
 				 <div class="img-wrapper"></div>
-				<!-- <img src="./assets/images/main-visual-after.png" alt="" /> -->
+				<!-- <img src="../assets/images/main-visual-after.png" alt="" /> -->
 				<p class="head">
-					3분만에 해석 완료<br />
-					해석 정확도 95%<br />
-					클릭 한 번으로 자동해석<br />
-					3분만에 해석 완료<br />
-					해석 정확도 95%
+					CAD모델 100% 그대로 사용<br />
+					Mesh 작업 없이 바로 해석<br />
+					단순하고 명료한 프로세스<br />
+					전문가를 위한 다양한 기능<br />
+					최고의 속도와 정확성 확보
 				</p>
-				<div class="after-text m-layout">
-					<h3>이제는 자동으로 생성되는 격자를 통해<br />곧바로 해석결과를 살펴보세요.</h3>
-					<p>Mesh에서 자유로워진 당신은<br />설계다운 설계, 해석다운 해석에 열정을 쏟을 수 있습니다. </p>
-				</div>
 			</div>
 		</div>
 		<!-- <div class="after-change">
@@ -146,84 +262,17 @@
 		
 	</section>
 	
-	<section class="main-imagine m-layout">
-		<h2>상상할 수 있는<br />모든 제품을 현실화하다</h2>
-		<p class="sub-text">당신이 MeshFree를 사용하게 된다는 것은 정렬 격자라는 마법상자를 통해<br />상상 속의 디자인을 구체화하여 검증하고 최적의 설계안을 도출해낼 수 있다는 의미입니다.</p>
-		<video src="./assets/images/video-p6.mp4" autoplay loop muted preload></video>
-	</section>
-	
-	<section class="main-mesh-free">
-		<div class="top-area">
-			<h2>해석전문가들도 깜짝 놀란<br />Mesh로부터의 자유로움</h2>
-			<p class="sub-text">
-				뭐가 정확한건지에 대한 이야기가 있었으면 좋겠다.<br />
-				수치로 표현되면 더 좋은 것 같은데 해석전문가들이 왜 깜짝 놀랐는지에 대한<br />
-				이야기가 내용에는 없기에 그 맥락을 풀어줄 수 있는 칸이 되는 쪽으로.
-			</p>
-		</div>
-		
-		<div class="m-layout">			
-			<div class="video-list">
-				<div class="video-area">
-					<img src="./assets/images/temp-mesh-image.jpg" alt="" />
-				</div>
-				<div class="text-area">
-					<h3>형상모델해석</h3>
-					<p class="main-text">
-						아무리 형상이 복잡하고 모델이 거대하거나<br />
-						파트의 수가 많더라도 불가능은 없습니다.<br />
-						MeshFree는 3D 캐드 모델을<br />
-						원형 그대로 불러오고 해석합니다.    
-					</p>
-				</div>
-			</div>
-			
-			<div class="video-list">
-				<div class="video-area">
-					<img src="./assets/images/temp-mesh-image.jpg" alt="" />
-				</div>
-				<div class="text-area">
-					<h3>변형없는 해석</h3>
-					<p class="main-text">
-						특별한 곡면과 얇은 박판 모델도<br />
-						모델의 변형 없이 그리드를 자동으로<br />
-						생성해주죠. 
-					</p>
-				</div>
-			</div>
-			
-			<div class="video-list">
-				<div class="video-area">
-					<img src="./assets/images/temp-mesh-image.jpg" alt="" />
-				</div>
-				<div class="text-area">
-					<h3>디테일한 해석값</h3>
-					<p class="main-text">
-						심지어 모델에 그려진 로고까지<br />
-						디테일을 놓치지 않고<br />
-						해석 결과에 반영하여 보여줍니다.   
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	
 	<section class="main-video-background">
-		<video src="./assets/images/video-p6.mp4" autoplay loop muted preload></video>
+		<video autoplay loop muted preload playsinline>		
+		    <!-- <source src="./assets/video/main-background.webm" type="video/webm"> -->
+		    <source src="http://www2.meshfree.co.kr/assets/video/main-background2.mp4" type="video/mp4">
+		</video>
 		<div class="ment">
-			<h3>midas MeshFree는<br />이 모든 것을 쉽고 빠르게 할 수 있습니다.</h3>
-		</div>
-	</section>
-	
-	<section class="main-simple m-layout">
-		<div class="image-cont">
-			<h2>세상에서 가장 간단한 프로세스</h2>
-			<p class="sub-text">
-				소프트웨어를 한번도 사용해보지 않은 분들도 걱정할 필요가 없습니다.<br />
-				Mesh에서 자유로워진 당신은 최소한의 프로세스로<br />
-				최적의 설계와 해석 결과를 확인할 수 있습니다. 
-			</p>
-			<img src="./assets/images/temp-video-02.jpg" alt="" />
+			<div class="align-middle">
+				<h3>MeshFree를 통해<br />보다 가치 있는 일에 집중하세요.</h3>
+				<p>MeshFree의 최신 해석 알고리즘은 여러분을 Mesh로 부터 자유롭게 만들어 드립니다.<br />설계다운 설계, 해석다운 해석에 보다 집중하고, 열정을 쏟을 수 있습니다.</p>
+				<a href="#">지금 다운로드 하기 <i class="xi-download"></i></a>
+			</div>
 		</div>
 	</section>
 	
@@ -232,9 +281,26 @@
 			<h2>처음 만났더라도 익숙한 친구처럼</h2>
 			<p class="sub-text">
 				어떤 목적으로 MeshFree를 사용하시든지, 그 목적에 맞는 직관적인 UI가 당신을 맞이합니다.<br />
-				최소한으로 필요한 기능들만 클릭하고,  곧바로 해석 결과를 확인해보세요. 
+				최소한으로 필요한 기능들만 클릭하고, 곧바로 해석 결과를 확인해보세요. 
 			</p>
 			
+			<div class="select-slide">
+				<!-- Slider main container -->
+				<div class="swiper-container2">
+				    <!-- Additional required wrapper -->
+				    <!-- If we need pagination -->
+				    <div class="swiper-pagination2"></div>
+				    
+				    <div class="swiper-wrapper">
+				      <!-- Slides -->
+				      <div class="swiper-slide"><img src="./assets/images/main-gui-01.png" alt="" /></div>
+				      <div class="swiper-slide"><img src="./assets/images/main-gui-02.png" alt="" /></div>
+				      <div class="swiper-slide"><img src="./assets/images/main-gui-03.png" alt="" /></div>
+				    </div>
+				</div>
+			</div>
+			
+			<!-- 
 			<div data-mk-slide class="slide-area-01">
 				<ul data-mk-slide-indicators class="tab">
 					<li><a href="javascript:;">선형</a></li>
@@ -242,52 +308,196 @@
 					<li><a href="javascript:;">열전달</a></li>
 				</ul>
 				<ul data-mk-slide-pages class="slide-image">
-					<li><img src="./assets/images/temp-video-03.jpg" alt="" /></li>
-					<li><img src="./assets/images/temp-video-04.jpg" alt="" /></li>
-					<li><img src="./assets/images/temp-video-05.jpg" alt="" /></li>
+					<li><img src="./assets/images/main-gui-01.png" alt="" /></li>
+					<li><img src="./assets/images/main-gui-02.png" alt="" /></li>
+					<li><img src="./assets/images/main-gui-03.png" alt="" /></li>
 				</ul>
 			</div>
+			-->
 		</div>
 	</section>
 	
-	<section class="main-visual-area">
-		<div class="partner m-layout">
-			<img src="./assets/images/main-client.jpg" alt="" />
-			<div class="text-area">
-				<h2>대한민국을 선도하는 최고의 회사들도<br />이미 우리의 파트너입니다.</h2>
-				<p>이미 200여개의 대표 기업들이 MeshFree를 도입하여 경쟁력을 높이고 있습니다.</p>
-				<a href="#">대표 기업 활용사례 보기 <i class="xi-angle-right-min"></i></a>
-			</div>
+	<section class="main-simple">
+		<div class="image-cont m-layout">
+			<h2>세상에서 가장 간단한 프로세스</h2>
+			<p class="sub-text">
+				소프트웨어를 한번도 사용해보지 않은 분들도 걱정할 필요가 없습니다.<br />
+				Mesh에서 자유로워진 당신은 최소한의 프로세스로<br />
+				최적의 설계와 해석 결과를 확인할 수 있습니다. 
+			</p>
+			<video autoplay loop muted preload playsinline>		
+			    <!-- <source src="./assets/video/main-process3.webm" type="video/webm"> -->
+			    <source src="http://www2.meshfree.co.kr/assets/video/main-process3.mp4" type="video/mp4">
+			</video>
 		</div>
-		
-		<div class="education m-layout">
-			<img src="./assets/images/main-online.jpg" alt="" />
+	</section>
+	
+	<section class="main-visual-area">		
+		<div class="education m-layout m-layout2">
 			<div class="text-area">
 				<h2>기초부터 심화까지<br />언제 어디서나 들을 수 있는 온라인 교육</h2>
 				<p>우리의 고객은 소프트웨어를 처음 사용하시는 분들에서부터 전문 엔지니어까지 다양하기에,<br />우리의 교육도 다양한 난이도를 고려하여 제작하였습니다.</p>
 				<a href="#">온라인 교육 들어보기 <i class="xi-angle-right-min"></i></a>
 			</div>
+			<div class="image-area">
+				<img src="./assets/images/main-online.jpg" alt="" />
+			</div>
 		</div>
 	</section>
 	
-	<section class="main-download">
-		<div class="box-area m-layout">
-			<h2>놀랍게도 당신은 MeshFree를<br />무료로, 기한 없이 사용할 수 있습니다.</h2>
-			<p>
-				아직도 많은 디자이너와 엔지니어들은 해석이 어려울 뿐더러<br />비싸기 때문에 접근하기 어렵다고 생각합니다.
-			</p>
-			<p>
-				우리는 최대한 많은 분들에게 가치와 가능성을 전달하기로 결정하였고,<br />
-				이에 MeshFree의 핵심기능을 선별하여 무상으로 여러분께 공유합니다. 
-			</p>
-			<p>
-				다운로드 하는 즉시 인증키를 받아 바로 사용하실 수 잇습니다. 
-			</p>
-			<a href="#">무료로 다운받기</a>
+	<section class="main-client">
+		<div class="partner m-layout m-layout2">
+			<div class="text-area">
+				<h2>대한민국을 선도하는 최고의 회사들도<br />이미 우리의 파트너입니다.</h2>
+				<p>이미 200여개의 대표 기업들이 MeshFree를 도입하여 경쟁력을 높이고 있습니다.</p>
+				<a href="#">대표 기업 활용사례 보기 <i class="xi-angle-right-min"></i></a>
+			</div>
+			<ul class="client-list">
+				<li>
+					<img src="./assets/images/main-client-01.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-02.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-03.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-04.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-05.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-06.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-07.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-08.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-09.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-10.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-11.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-12.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-13.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-14.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-15.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-16.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-17.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-18.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-19.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-20.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-21.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-22.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-23.jpg" alt="" />
+				</li>
+				<li>
+					<img src="./assets/images/main-client-24.jpg" alt="" />
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<section class="main-download">		
+		<div class="download-area m-layout m-layout2">
+			<div class="text-area">
+				<h2>놀랍게도 당신은 MeshFree를<br />무료로, 기한 없이 사용할 수 있습니다.</h2>
+				<p>높은 비용과 어려운 사용법 때문에 해석소프트웨어 도입을 망설이신다면,<br />
+				걱정 없이 MeshFree를 무료로, 영구적으로 사용하시기 바랍니다.<br />
+				지금 바로 다운로드하고 즉시 인증키를 받아 사용하실 수 있습니다.</p>
+				<a href="#" class="download">지금 다운로드 하기 <i class="xi-download"></i></a>
+			</div>
 		</div>
 	</section>
 
 </main>
+
+<!--
+<script>
+$(function() {
+	var mainMotionWall = $('.main-mesh-free');
+	var mainMotionWallTop = mainMotionWall.offset().top;
+	$(window).scroll(function () {
+		var winTop = $(this).scrollTop();
+		if (winTop >= mainMotionWallTop) {
+			mainMotionWall.addClass('back-motion')
+			mainMotionWall.removeClass('back-motion2')
+		} else if (winTop <= mainMotionWallTop) {
+			mainMotionWall.removeClass('back-motion')
+			mainMotionWall.addClass('back-motion2')
+		}
+	});
+});	
+</script>
+-->
+
+<!-- Initialize Swiper -->
+
+<script>
+var menu = ['선형', '모드', '열전달']
+var mySwiper = new Swiper('.swiper-container2', {
+    // If we need pagination
+    effect: 'fade',
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    pagination: {
+      el: '.swiper-pagination2',
+		clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (menu[index]) + '</span>';
+        },
+    },
+  })
+</script>
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+</script>
 
 <footer>
 	
@@ -308,7 +518,7 @@
 					<li><a href="/check/feature.asp">제품특징</a></li>
 					<li><a href="/check/application-main.asp">적용사례</a></li>
 					<li><a href="/check/application-list.asp">기업활용 사례</a></li>
-					<li><a href="/check/midasit.asp">회사소개</a></li>
+					<!-- <li><a href="/check/midasit.asp">회사소개</a></li> -->
 				</ul>
 				<h4 class="solo">교육센터</h4>
 				<ul class="sub">
@@ -325,7 +535,7 @@
 					<li><a href="/support/request.asp">제품상담</a></li>
 				</ul>
 				<h4 class="solo"><a href="/issue/issue-list.asp">이슈 및 소식</a></h4>
-				<h4 class="solo"><a href="/member/download-check.asp">다운로드</a></h4>
+				<h4 class="solo"><a href="/member/download.asp">다운로드</a></h4>
 			</li>
 			<li>
 				<h4>마이다스아이티</h4>
@@ -334,7 +544,7 @@
 					<li><a href="http://midasit.com/2018_MIDASIT.pdf" target="_blank">회사소개서</a></li>
 					<li><a href="http://nfx.co.kr" target="_blank">기계분야 홈페이지</a></li>
 					<li><a href="https://midas.recruiter.co.kr/app/jobnotice/list" target="_blank">채용 안내</a></li>
-					<li><a href="#">패밀리 사이트</a></li>
+					<!-- <li><a href="#">패밀리 사이트</a></li> -->
 				</ul>
 			</li>
 		</ul>
@@ -358,5 +568,16 @@
 </footer>
 
 </body>
-
+<script>
+	$(document).ready(function () {
+		/*
+		$('.hamburger').on('click', function (){
+			$('.nav').show();
+		});
+		$('#nav_view').on('click', function (){
+			$('.nav').hide();
+		});
+		*/
+	});
+</script>
 </html>

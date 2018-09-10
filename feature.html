@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +23,8 @@
     <meta property="og:image" content="" />
     <meta property="og:description" content="" />
 
-    <link rel="icon" href="./assets/images/favicon-icon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./assets/images/favicon-icon.ico" type="image/x-icon" />
+    <link rel="icon" href="./assets/faviconn.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
 
 	<!-- include -->
 	<link rel="stylesheet" href="./assets/css/default.css" />
@@ -33,6 +34,7 @@
 
 	<script src="./assets/js/jquery.js"></script>
 	<script src="./assets/js/style.js"></script>
+	<script src="/_js/functions.js"></script>
 	<!-- // include -->
 
 	<!-- Google Analytics -->
@@ -57,7 +59,7 @@
 					</a>
 				</div>
 				<ul>
-					<li data-has-sub class="on">
+					<li data-has-sub>
 						<a href="/product/grade.asp">시작하기</a>
 						<ul class="sub">
 							<li><a href="/product/grade.asp">제품등급</a></li>
@@ -72,7 +74,7 @@
 							<li><a href="/check/feature.asp">제품특징</a></li>
 							<li><a href="/check/application-main.asp">적용사례</a></li>
 							<li><a href="/check/application-list.asp">기업활용 사례</a></li>
-							<li><a href="/check/midasit.asp">회사소개</a></li>
+							<!-- <li><a href="/check/midasit.asp">회사소개</a></li> -->
 						</ul>
 					</li>
 					<li data-has-sub>
@@ -86,7 +88,7 @@
 					<li data-has-sub>
 						<a href="/support/faq-list.asp">기술지원</a>
 						<ul class="sub">
-							<li><a href="/support/faq-list.asp">FQA</a></li>
+							<li><a href="/support/faq-list.asp">FAQ</a></li>
 							<li><a href="/support/qna-list.asp">QNA</a></li>
 							<li><a href="/support/request.asp">제품상담</a></li>
 						</ul>
@@ -95,14 +97,16 @@
 						<a href="/issue/issue-list.asp">이슈 및 소식</a>
 					</li>
 					<li>
-						<a href="/member/download-check.asp" class="download">다운로드</a>
+						<a href="/member/download.asp" class="download"><span>다운로드<i class="xi-download"></i></span></a>
 					</li>
 				</ul>
 				
 				<div class="sub-menu">
 					<ul>
-						<li><a href="/member/login.asp">로그인</a></li>
-						<li><a href="/member/join.asp">회원가입</a></li>
+					
+					<li><a href="/member/login.asp">로그인</a></li>
+					<li><a href="/member/join.asp">회원가입</a></li>
+					
 					</ul>
 				</div>
 			</nav>
@@ -112,228 +116,228 @@
 			<a href="#"><i class="xi-bars"></i></a>
 		</div>
 	</div>
-</header>
-
-<!-- <div class="sub-nav">
+</header><div class="sub-nav">
 	<ul>
-		<li><a href="/check/feature.asp" class="on">제품특징</a></li>
+		<li><a href="/check/feature.asp">제품특징</a></li>
 		<li><a href="/check/application-main.asp">적용사례</a></li>
 		<li><a href="/check/application-list.asp">기업활용 사례</a></li>
-		<li><a href="/check/midasit.asp">회사소개</a></li>
-	</ul>
-</div> -->
-
-<div class="sub-nav">
-	<ul>
-		<li><a href="" class="on">제품특징</a></li>
-		<li><a href="">적용사례</a></li>
-		<li><a href="">기업활용 사례</a></li>
-		<li><a href="">회사소개</a></li>
-		<li><a href="">일이삼사오육</a></li>
-		<li><a href="">일이삼사오육칠</a></li>
-		<li><a href="">일이삼사오육칠팔</a></li>
+		<!-- <li><a href="/check/midasit.asp">회사소개</a></li> -->
 	</ul>
 </div>
 
+<script>
+/* 서브 네비게이션 스크롤 고정 이벤트 */
+$(function() {
+	var subNav = $('.sub-nav');
+	//nav 위치
+	var navTop = subNav.offset().top;
+	//스크롤 할 때마다 실행
+	$(window).scroll(function () {
+		var winTop = $(this).scrollTop();
+		//스크롤 위치가 nav의 위치보다 아래라면 클래스 fixed 추가
+		if (winTop >= navTop) {
+			subNav.addClass('nav-fixed')
+		} else if (winTop <= navTop) {
+			subNav.removeClass('nav-fixed')
+		}
+	});
+
+});
+</script>
+
+<script>
+	$('nav>ul>li:eq(1)').addClass('on');
+</script>
+
+<script src="http://idangero.us/swiper/dist/js/swiper.min.js"></script>
+<link rel="stylesheet" href="./assets/css/swiper.min.css" />
+
 <main class="feature">
 	
-	<div class="sub-title m-layout">
+	<div class="sub-title m-layout sub-title-center">
 		<h2>제품특징</h2>
 	</div>
 	
-	<section class="feature-01 m-layout">
-		<h2>모델을 불러오면 그대로 해석합니다.</h2>
-		<p class="sub-text">
-			MeshFree는 그동안 사용자들의 시간과 노력을 낭비하게 만들었던<br />
-			모델 클린업 과정과 요소망 생성 작업을 과감하게 생략한 혁명적인 솔루션입니다.<br />
-			당신의 소중한 디자인을 그대로 보존하여 시뮬레이션 해보실 수 있습니다.
-		</p>
-		<div class="image">
-			<img src="./assets/images/temp-test-image.png" alt="" />
-		</div>
-	</section>
-	
-	<section class="feature-02 m-layout">
-		<h2>스마트한 설계, 스마트한 프로세스</h2>
-		<p class="sub-text">
-			제품의 설계 단계부터 시뮬레이션을 진행하여 최적의 프로세스를 구축할 수 있습니다.<br />
-			설계자들도 이제는 모델에 대한 간단한 해석을 진행하여 자신의 모델에 확신을 가질 수 있습니다.<br />
-			초기 단계에서 품질이 확보된 모델은 제조 전 과정에 걸쳐 놀라운 이익을 가져다 줄 것 입니다.
-		</p>
-		<div class="image">
-			<img src="./assets/images/temp-test-image.png" alt="" />
-		</div>
-	</section>
-	
-	<section class="feature-03">
-		<div class="m-layout">
+	<section class="feature-01">
+		<div class="m-layout m-layout2">
 			<h2>자동 정렬격자, MeshFree만의 마법</h2>
-			<div class="box box-01">
-				<div class="right">
-					<img src="./assets/images/temp-test-image.png" alt="" />
-				</div>
-				<div class="left">
-					<p>
-						전통적인 유한요소법을 기반으로 한 타 프로그램은 요소망 생성의 문제로	CAD 모델을 그대로 사용하는 것이 불가능하였습니다.<br />
-						요소망의 품질을 높이기 위해 많은 시간과 노력을 들여야 했으며, 자동화를 도입하는데에 한계가 존재하였습니다.<br /><br />
-						하지만 MeshFree 에서는 요소망에 의존하지 않고 백그라운드 정렬격자로부터 근사해를 계산하여 빠르고 쉽게 해석을 가능케 합니다.
-					</p>
-				</div>
+			<div class="image-area">
+				<img src="./assets/images/feature-intro.jpg" alt="" />
 			</div>
+			<p class="main">
+				전통적인 유한요소법을 기반으로 범용 SW는 요소망 생성의 문제로 CAD 모델을 그대로 사용하는 것이 불가능하였습니다.요소망의 품질을 높이기 위해 많은 시간과 노력을 들여야 했으며, 설계단계 CAE (Up-Front CAE) 구축에 많은 장애요소로 작용하였습니다.<br /><br />
+				하지만 MeshFree에서는 CAD 형상에 독립적인 백그라운드 정렬격자로부터 근사해를 계산하여 빠르고 쉽게 해석을 가능하게 합니다.
+			</p>
 			
-			<div class="box box-02">
-				<div class="left">
-					<img src="./assets/images/temp-test-image.png" alt="" />
-				</div>
-				<div class="right">
-					<h3>
-						MeshFree 는 어떻게 기존과는 다르게,<br />
-						하지만 보다 더 빠르고 정확한<br />
-						해석기법을 개발하였을까요? 
-					</h3>
-					<p>
-						MeshFree는 정렬된 격자 안에 충분히 들어오는 부분(A)에 대해서는 기존의 유한요소법과도 동일한 수식으로 처리하고, 격차와 경계가 걸쳐 있는 부분 (B)의 경우에는 D-Function 이라는 특수한 함수를 이용하여 경계조건을 부여했습니다.<br /><br />
-						기존 FEM에서는 경계면에 절점이 존재해야만 하중경계조건을 부여할 수 있었는데, MeshFree는 이러한 기법을 통해 절점의 여부와 상관없이 해석 가능하게 된 것입니다. 
-					</p>
-				</div>
+			<div class="box">
+				<h4>Basic Algorithm Concept</h4>
+				<h3>
+					MeshFree는 어떻게 기존과는 다르게,<br />
+					하지만 보다 더 빠르고 정확한 해석기법을 개발하였을까요?
+				</h3>
+				<img src="./assets/images/feature-01-02.jpg" alt="" />
+				<p>
+					기존 FEM에서는 경계면에 요소가 존재해야만 정식화가 가능하였으나, MeshFree는 최신의 해석 알고리즘 기법을 이용하여 경계면의 요소망 생성 여부와 관계없이 해석이 가능합니다. 유한요소법의 안정성과 정확성을 유지하면서, 사용의 편의성을 극대화 시켰습니다. 
+				</p>
 			</div>
 		</div>
 	</section>
 	
-	<section class="feature-04 m-layout">
-		<h2>모두가 인정한 MeshFree의 혁신성</h2>
+	<section class="feature-02">
+		<div class="m-layout m-layout2">
+			<h2>모델을 불러오면 그대로 해석합니다.</h2>
+			<p class="sub-text">
+				MeshFree는 어떤 CAD 모델이든지 당신의 소중한 디자인을 그대로 보존하여 해석할 수 있습니다. 따라서 설계가 변경되어 CAD 모델을 다시 불러오더라도 걱정이 없습니다.
+			</p>
+			<div class="image">
+				<img src="./assets/images/feature-02-01.png" alt="" />
+			</div>
+		</div>
+	</section>
+	
+	<section class="feature-03 m-layout m-layout2">
+		<h2>누구나 지금 바로 시작할 수 있습니다.</h2>
 		<p class="sub-text">
-			기존의 유한요소법의 모델 이상화 작업과 클린업 작업을 생략하고 3D 모델 원형을 그대로 시뮬레이션 하는 해석기법으로 해석 총 소요시간을 70% 이상 단축하였습니다.  
+			MeshFree의 간결하고 직관적인 해석 프로세스 해석 전문가 뿐만 아니라 설계자, 해석 입문자 분들도 최소한의 학습만으로 최고의 결과를 만들 수 있습니다. 지금까지의 한계를 쉽게 넘어설 수 있습니다.
 		</p>
-		<div class="box-area">
-			<div class="box-00">
-				<img src="./assets/images/temp-test-image.png" alt="" />
+		<div class="image">
+			<img src="./assets/images/feature-03-01.png" alt="" />
+		</div>
+		
+		<ul class="box-area">
+			<li>
+				<img src="./assets/images/feature-03-02.jpg" alt="" />
+				<h3>설계에 확신을 더하다</h3>
+				<p>
+					기존 FEM 방식에서 많은 시간과 전문적 지식, 경험이 필요했던, 해석 모델의 이상화 및 클린업 과정을 과감히 삭제하였습니다. 설계 단계에서 보다 창의적인 설계가 가능합니다.
+				</p>
+			</li>
+			<li>
+				<img src="./assets/images/feature-03-03.jpg" alt="" />
+				<h3>Mesh의 한계를 뛰어넘다</h3>
+				<p>
+					기존 방식으로 해석이 불가능한 모델도 이제는 그 성능을 검증할 수 있습니다. Mesh의 한계로 제한되어 있던 해석자의 풍부한 경험과 지식의 활용이 가능합니다.
+				</p>
+			</li>
+		</ul>
+	</section>
+	
+	<section class="feature-04">
+		<div class="m-layout m-layout2">
+			<h2>스마트한 설계,<br />스마트한 프로세스 (Up-front CAE)</h2>
+			<p class="sub-text">
+				제품의 설계 단계부터 시뮬레이션을 진행하여 최적의 프로세스를 구축할 수 있습니다.  설계자분들도 이제는 모델에 대한 간단한 해석을 진행하여 자신의 모델에 확신을 가질 수 있습니다. 초기단계에서 품질이 확보된 모델은 제조 전 과정에 걸쳐 놀라운 이익을 가져다 줄 것입니다.
+			</p>
+			<div class="image">
+				<img src="./assets/images/feature-04-01.png" alt="" />
 			</div>
-			<ul>
-				<li>
-					<h3>2017 올해의 10대 기계기술 선정</h3>
-					<p>(한국기계기술단체총연합회, 2017. 11)</p>
-				</li>
-				<li>
-					<h3>정렬격자를 기반으로 모델의 경계면을 내연적 함수로 정의하여 풀이하는 혁신적인 해석기법 정부 R&D 개발 과제[삼성전자 설계자를  위한 맞춤형  CAE 통합 솔루션 개발 및 시스템 구축] 성공 판정</h3>
-					<p>(신제품개발 민관공동투자기술개발과제, 2016.03)</p>
-				</li>
-				<li>
-					<h3>대한기계학회 CAE 및 응용역학부문으로부터 신뢰성 검증 완료</h3>
-					<p>(민관공동투자기술개발과제 성능 지표에 대한 확인 검수)</p>
-				</li>
-				<li>
-					<h3>삼성전자 글로벌기술센터로부터 신뢰성, 실무사례 적용가능성에 대한 검증 완료</h3>
-					<p>(민관공동투자기술개발과제 성능 지표에 대한 확인 검수)</p>
-				</li>
-			</ul>
 		</div>
 	</section>
 	
-	<section class="feature-05 m-layout">
+	<section class="feature-05 m-layout m-layout2">
 		<h2>철저하게 모델을 검증하여<br />정확성을 확보하였습니다</h2>
 		<p class="sub-text">
 			NAFEMS에서 제안하는 공식 모델 검증을 통해 소프트웨어의 신뢰를 확보하였습니다.<br />
 			기존의 유한요소법과 비교한 검증 사례를 직접 눈으로 확인하시기 바랍니다.  
 		</p>
-		<div class="slide-area-02 slider" id="slider">
-			<div class="holder">
-				<div class="slide-wrapper">
-					<div class="slide page-area">
-						<img src="./assets/images/temp-test-image.png" alt="" />
-						<p>1번 슬라이드 이미지에 대한 설명글</p>
+		<div class="slide-area-02">
+			<!-- Swiper -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide sli1">
+						<img src="./assets/images/feature-05-01.jpg" alt="" />
+					</div>
+					<div class="swiper-slide sli2">
+						<img src="./assets/images/feature-05-02.png" alt="" />
+					</div>
+					<div class="swiper-slide sli3">
+						<img src="./assets/images/feature-05-03.png" alt="" />
+					</div>
+					<div class="swiper-slide sli4">
+						<img src="./assets/images/feature-05-04.png" alt="" />
+					</div>
+					<div class="swiper-slide sli5">
+						<img src="./assets/images/feature-05-05.png" alt="" />
+					</div>
+					<div class="swiper-slide sli6">
+						<img src="./assets/images/feature-05-06.png" alt="" />
+					</div>
+					<div class="swiper-slide sli7">
+						<img src="./assets/images/feature-05-07.png" alt="" />
 					</div>
 				</div>
-				<div class="slide-wrapper">
-					<div class="slide page-area">
-						<img src="./assets/images/temp-test-image.png" alt="" />
-						<p>2번 슬라이드 이미지에 대한 설명글</p>
-					</div>
-				</div>
-				<div class="slide-wrapper">
-					<div class="slide page-area">
-						<img src="./assets/images/temp-test-image.png" alt="" />
-						<p>3번 슬라이드 이미지에 대한 설명글</p>
-					</div>
-				</div>
-			</div>
-			<div class="page-area">
-				<a href="javascript:;" class="prev"><i class="xi-long-arrow-left"></i></a>
-				<span class="state">
-					<strong class="current">0</strong>
-					/<span class="total" style="margin: 0;">0</span>
-				</span>
-				<a href="javascript:;" class="next"><i class="xi-long-arrow-right"></i></a>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<!-- Add Arrows -->
 			</div>
 		</div>
 	</section>
 	
-	<section class="feature-06">
-		<div class="m-layout">
-			<h2>제목이 있었으면 좋을 것 같아여</h2>
+	<section class="feature-06 m-layout m-layout2">
+		<div class="box">
+			<h2>모두가 인정한 MeshFree의 혁신성</h2>
 			<p class="sub-text">
-				NAFEMS에서 제안하는 공식 모델 검증을 통해 소프트웨어의 신뢰를 확보하였습니다.<br />
-				기존의 유한요소법과 비교한 검증 사례를 직접 눈으로 확인하시기 바랍니다.  
+				기존의 유한요소법의 모델 이상화 작업과 클린업 작업을 생략하고 3D 모델 원형을 그대로 시뮬레이션 하는 해석기법으로 해석 총 소요시간을 70% 이상 단축하였습니다.  
 			</p>
-			<div class="list list-01">
-				<div class="right">
-					<img src="./assets/images/temp-test-image.png" alt="" />
+			<div class="box-area">
+				<div class="box-00">
+					<img src="./assets/images/feature-06-01.png" alt="" />
 				</div>
-				<div class="left">
-					<h4>이제 설계 변경이 즐겁습니다</h4>
-					<h3>다양한 사용자 중심의<br />기능을 제공합니다.</h3>
-					<p>
-						수없이 반복되는 설계안을 반갑게 맞이하여 주세요. 이제는 Auto-Update기능 하나로 변경된 모델을 자동으로 업데이트하여 결과를 확인할 수 있습니다. 모델이 변경되더라도 동일한 하중과 경계조건을 유지할 수 있기 때문에 걱정이 없습니다. 
-					</p>
-				</div>
-			</div>
-			
-			<div class="list list-02">
-				<div class="right">
-					<img src="./assets/images/temp-test-image.png" alt="" />
-				</div>
-				<div class="left">
-					<h4>최적의 설계안을 제시합니다</h4>
-					<h3>경험할수록<br />가치는 상승합니다</h3>
-					<p>
-						가장 가볍고 물량을 절감할 수 있는 최적의 설계안을 MeshFree가 찾아줍니다. 다양한 가동조건, 하중조건, 제작공정까지 고려하면서도 목표로 하는 부피, 무게를 달성할 수 있는 설계안을	눈으로 확인할 수 있습니다. 이제 MeshFree는 단순한 검증 소프트웨어가 아니라 당신의 설계 역량을 상승시켜주는 소중한 친구가 됩니다. 
-					</p>
-				</div>
-			</div>
-			
-			<div class="list list-03">
-				<div class="right">
-					<img src="./assets/images/temp-test-image.png" alt="" />
-				</div>
-				<div class="left">
-					<h4>조금은 틀리더라도 괜찮아요</h4>
-					<h3>경험할수록<br />가치는 상승합니다</h3>
-					<p>
-						해석을 실행하기 전 MeshFree는 스스로 모델을 검토하고, 사용자의 실수라고 판단되는 항목을 보여줍니다. 항목을 직접 클릭하여 해당 부분만 수정하면 당신의 자그마한 실수는 아무도 모르게 사라져있게 됩니다. 
-					</p>
-				</div>
+				<ul>
+					<li>
+						<h3>2017 올해의 10대 기계기술 선정</h3>
+						<p>(한국기계기술단체총연합회, 2017. 11)</p>
+					</li>
+					<li>
+						<h3>정렬격자를 기반으로 모델의 경계면을 내연적 함수로 정의하여 풀이하는 혁신적인 해석기법 정부 R&D 개발 과제[삼성전자 설계자를  위한 맞춤형  CAE 통합 솔루션 개발 및 시스템 구축] 성공 판정</h3>
+						<p>(신제품개발 민관공동투자기술개발과제, 2016.03)</p>
+					</li>
+					<li>
+						<h3>대한기계학회 CAE 및 응용역학부문으로부터 신뢰성 검증 완료</h3>
+						<p>(민관공동투자기술개발과제 성능 지표에 대한 확인 검수)</p>
+					</li>
+					<li>
+						<h3>삼성전자 글로벌기술센터로부터 신뢰성, 실무사례 적용가능성에 대한 검증 완료</h3>
+						<p>(민관공동투자기술개발과제 성능 지표에 대한 확인 검수)</p>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</section>
 	
 	<section class="product-contact">
-		<div class="m-layout">
-			<ul>
-				<li>
-					<i class="xi-download"></i>
-					<h4>지금 바로 MeshFree로 인해<br />달라질 당신의 업무를 체험해보세요.</h4>
-					<a href="#">제품 다운로드</a>
-				</li>
-				<li>
-					<i class="xi-comment-o"></i>
-					<h4>궁금한 것이 있다면<br />주저하지 말고 물어보세요.</h4>
-					<a href="#">구매상담</a>
-				</li>
-			</ul>
-		</div>
-	</section>
+	<div class="m-layout">
+		<ul>
+			<li>
+				<i class="xi-download"></i>
+				<h4>지금 바로 MeshFree로 인해<br />달라질 당신의 업무를 체험해보세요.</h4>
+				<a href="/member/download.asp">제품 다운로드 <i class="xi-angle-right-min"></i></a>
+			</li>
+			<li>
+				<i class="xi-comment-o"></i>
+				<h4>궁금한 것이 있다면<br />주저하지 말고 물어보세요.</h4>
+				<a href="/support/request.asp">구매상담 <i class="xi-angle-right-min"></i></a>
+			</li>
+		</ul>
+	</div>
+</section>
 
 </main>
+
+<script>
+var swiper = new Swiper('.swiper-container', {
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+</script>
 
 <footer>
 	
@@ -354,7 +358,7 @@
 					<li><a href="/check/feature.asp">제품특징</a></li>
 					<li><a href="/check/application-main.asp">적용사례</a></li>
 					<li><a href="/check/application-list.asp">기업활용 사례</a></li>
-					<li><a href="/check/midasit.asp">회사소개</a></li>
+					<!-- <li><a href="/check/midasit.asp">회사소개</a></li> -->
 				</ul>
 				<h4 class="solo">교육센터</h4>
 				<ul class="sub">
@@ -371,7 +375,7 @@
 					<li><a href="/support/request.asp">제품상담</a></li>
 				</ul>
 				<h4 class="solo"><a href="/issue/issue-list.asp">이슈 및 소식</a></h4>
-				<h4 class="solo"><a href="/member/download-check.asp">다운로드</a></h4>
+				<h4 class="solo"><a href="/member/download.asp">다운로드</a></h4>
 			</li>
 			<li>
 				<h4>마이다스아이티</h4>
@@ -380,7 +384,7 @@
 					<li><a href="http://midasit.com/2018_MIDASIT.pdf" target="_blank">회사소개서</a></li>
 					<li><a href="http://nfx.co.kr" target="_blank">기계분야 홈페이지</a></li>
 					<li><a href="https://midas.recruiter.co.kr/app/jobnotice/list" target="_blank">채용 안내</a></li>
-					<li><a href="#">패밀리 사이트</a></li>
+					<!-- <li><a href="#">패밀리 사이트</a></li> -->
 				</ul>
 			</li>
 		</ul>
@@ -404,5 +408,16 @@
 </footer>
 
 </body>
-
+<script>
+	$(document).ready(function () {
+		/*
+		$('.hamburger').on('click', function (){
+			$('.nav').show();
+		});
+		$('#nav_view').on('click', function (){
+			$('.nav').hide();
+		});
+		*/
+	});
+</script>
 </html>

@@ -12,10 +12,10 @@ var afterLoad = function() {
 
 	var selector = function (target) {
 		return document.querySelector(target);
-	}
+	};
 	var selectors = function (target) {
 		return document.querySelectorAll(target);
-	}
+	};
 
 	// ===========================================================
 

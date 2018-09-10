@@ -502,10 +502,9 @@ var TouchSlide = (function() {
 	return TouchSlide;
 })();
 
-	
-	
-// like a 'jQuery.ready()'
-document.addEventListener('DOMContentLoaded', () => {
+
+
+var afterLoad = function(event){
 
 	var winWidth = window.innerWidth;
 		var ua = navigator.userAgent.toLowerCase
@@ -598,5 +597,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 
 	})();
-	
-});
+}
+
+// like a 'jQuery.ready()'
+try {
+	document.addEventListener('DOMContentLoaded', afterLoad);
+} catch(e) {
+	// like a 'jQuery.ready()'
+	document.addEventListener('load', afterLoad);
+}

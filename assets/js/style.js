@@ -502,10 +502,9 @@ var TouchSlide = (function() {
 	return TouchSlide;
 })();
 
-	
-	
-// like a 'jQuery.ready()'
-document.addEventListener('DOMContentLoaded', () => {
+
+
+var afterLoad = function(event){
 
 	var winWidth = window.innerWidth;
 		var ua = navigator.userAgent.toLowerCase
@@ -555,14 +554,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		calculateAspectRatioFit();
 		window.addEventListener('scroll', function() {
 			var maskTop = mask.offsetTop;
-			if ( window.scrollY > maskTop ) {
+			var scrollTop = window.scrollY || document.documentElement.scrollTop;
+			if ( scrollTop > maskTop ) {
 				before.classList.add('on');
 				after.classList.add('on')
 			} else {
 				before.classList.remove('on');
 				after.classList.remove('on');
 			}
-			console.log('mask top', maskTop, window.scrollY);
+			console.log('mask top', maskTop, scrollTop);
 		}, false);
 	})();
 
@@ -589,14 +589,23 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			});
 		}
-		hasSubLists.forEach(function(subList, idx) {
-			subList.children[0].addEventListener('click', function(event) {
-				console.log(11);
-				event.preventDefault();
-				mobileMenuToggle(idx);
-			}, true);
-		});
+
+		for ( var i=0; i < hasSubLists.length; i+=1 ) {
+			(function(idx) {
+				hasSubLists[idx].children[0].addEventListener('click', function(event) {
+					event.preventDefault();
+					mobileMenuToggle(idx);
+				}, true);
+			})(i)
+		}
 
 	})();
-	
-});
+}
+
+// like a 'jQuery.ready()'
+try {
+	document.addEventListener('DOMContentLoaded', afterLoad);
+} catch(e) {
+	// like a 'jQuery.ready()'
+	document.addEventListener('load', afterLoad);
+}
